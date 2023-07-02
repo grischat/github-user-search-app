@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap'); //Main h1,2,3,4 bold and regular font
+
+
+
+:root {
+    //light mode colors
+    --grey-background-main: #F6F8FF;
+    --blue-button: #0079ff; // for dark theme too
+    --blue-button-hover: #60ABFF;
+    --grey-text-data: #697c9a;
+    --dark-grey-icons: #4b6a9b;
+    --black-text: #2b3442;
+    --white-background: #fefefe; // for dark theme too
+
+    //dark mode colors
+    --black-background-main: #141d2f;
+    --black-background-content: #1e2a47;
+    
+    //font
+    --main-font: 'Space Mono', monospace;
+    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    
+    
+    
+    outline: 1px solid limegreen !important;
+    background: rgb(0 100 0 / 0.05) !important;
+  }
+body {
+    margin: 5%;
+    background-color: var(--grey-background-main);
+}
+h1 {
+    font-family: var(--main-font);
+    line-height: 38px;
+    font-size: 26px;
+}
+
+h2 {
+    font-family: var(--main-font);
+    line-height: 33px;
+    font-size: 22px;
+};
+
+h3 {
+    font-family: var(--main-font);
+    line-height: 24px;
+    font-size: 16px;
+};
+
+h5 {
+    font-family: var(--main-font);
+    line-height: 28px;
+    font-size: 11px;
+    font-weight: normal;
+    color: var(--dark-grey-icons);
+    opacity: 0.9;
+    text-align: center;
+};
+
+a {
+    text-decoration: none; 
+    font-family: var(--main-font);
+    color: var(--dark-grey-icons);
+    opacity: 0.9;
+    font-size: 13px;
+    font-weight: normal;
+    @media (min-width:768px) {
+        font-size: 15px;
+    }
+    
+}
+

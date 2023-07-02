@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="stylesheet" href="/starter-code/css/common.css">
+    <link rel="stylesheet" href="/starter-code/css/mobile.css">
+    <title>GitHub search</title>
+</head>
+<body>
+
+<div class="nav__container">
+    <div class="header__container">
+        <div class="header__one">
+            <h1>devfinder</h1>
+        </div>
+        <div class="themeswitcher__container">
+            <button class="themeswitcher__button"></button>
+        </div>
+    </div>
+    <div class="search__container">
+        <img class="search__icon" src = "/starter-code/assets/icon-search.svg" alt="search loop icon">
+        <input type="text" class="search__input" placeholder="Search GitHub username..." name="emailInput">
+        <button type="submit" class="search__button" value="Search" action="/submit-form">Search</button>
+    </div>
+</div>
+    <div class="content__container">
+        <div class="headinginfo__container">
+            <img src="/starter-code/assets/freak.png" alt="user`s avatar" id="user__avatar">
+            <div class="maininfo__container">
+                <h2 id="user__name">The Octocat</h2>
+                <a id="user__link" href="https://twitter.com/" target="_blank">@octocat</a>
+                <h3 id ="user__joined">Joined 25 Jan 2011</h3>
+            </div>
+        </div>
+        
+        <p id="paragraph__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec odio. Quisque volupat mattis eros.</p>
+        
+        <div class="secondaryinfo__container">
+            <div class="data__container">
+                <div class="repos__container">
+                    <h5 class="info__title">Repos</h5>
+                    <h4 class="info__count">8</h4>
+                </div>
+                <div class="followers__container">
+                    <h5 class="info__title">Followers</h5>
+                    <h4 class="info__count">3938</h4>
+                </div>
+                <div class="following__container">
+                    <h5 class="info__title">Following</h5>
+                    <h4 class="info__count">9</h4>
+                </div>
+            </div>
+        </div>
+        <div class="links__container">
+            <div class="location__container">
+                <a href="https://example.com/location" target="_blank">
+                    <img class="icon" src="/starter-code/assets/icon-location.svg" alt="Location Icon">
+                    <span class="location__span">Warsaw</span>
+                </a>
+            </div>
+            <div id=""class="userlink__container">
+                <a href="https://example.com/social-media" target="_blank">
+                    <img class="icon" src="/starter-code/assets/icon-website.svg" alt="User`s link">
+                    <span>Link</span>
+                </a>
+            </div>
+            <div class="twitter__link">
+                <a href="https://example.com/email" target="_blank">
+                    <img class="icon"  src="/starter-code/assets/icon-twitter.svg" alt="Twitter Icon">
+                    <span>Twitter link</span>
+                </a>
+            </div>
+            <div class="company__link">
+                <a href="https://example.com/phone" target="_blank">
+                    <img class="icon" src="/starter-code/assets/icon-company.svg" alt="Company icon">
+                    <span>Company link</span>
+                </a>
+            </div>           
+        </div>
+    </div>
+    
+       
+</body>
+</html>
