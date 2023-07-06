@@ -239,7 +239,7 @@
     }
     #user__bio {
         width: 279px;
-        height: 75px;
+        height: auto;
         top: 33px;
         font-size: 13px;
         line-height: 25px;
@@ -249,7 +249,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         @media (min-width: 768px){
             width: 493px;
@@ -318,4 +318,12 @@
     @media (min-width: 768px){
         font-size: 13px;
     }
+}
+#validation {
+    position: absolute;
+    margin: 67px 35px 8px 27px;
+    font-size: 13px;
+    font-family: var(--main-font);
+    font-weight: bold;
+    color: #F74646;
 }

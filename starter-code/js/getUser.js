@@ -5,7 +5,7 @@ const button = document.getElementById('button')
 
 
 
-button.addEventListener('click', () => {
+button.addEventListener('click', (event) => {
     event.preventDefault();
     //Get elements from HTML
     const user = document.getElementById('input').value
@@ -21,15 +21,39 @@ button.addEventListener('click', () => {
     const linkRepos = document.getElementById('link__repos')
     const linkTwitter = document.getElementById('link__twitter')
     const twitterStatus = document.getElementById('twitter__status')
-    const linkCompany = document.getElementById('link__company')
+    const linkCompany = document.getElementById('company')
     const companyStatus = document.getElementById('company__name')
-    
+    const searchContainer = document.querySelector('.search__container');
 
 
     const usersListUrl = `https://api.github.com/users/${user}`;
     async function sendRequest(method, url) {
     try {
+
         const response = await fetch(url);
+
+        if (response.status === 404) {
+            // User not found
+
+            const existingValidationMsg = searchContainer.querySelector('#validation');
+            if (existingValidationMsg) {
+            // If element exists - delete element
+            existingValidationMsg.remove();
+            }
+
+            const validationMsg = document.createElement('p')
+            validationMsg.textContent = 'No results'
+            validationMsg.id = 'validation'
+            searchContainer.insertBefore(validationMsg, button); // Adding <p> element with validation 
+            
+            return null;
+          } else {
+            const existingValidationMsg = searchContainer.querySelector('#validation');
+            if (existingValidationMsg) {
+                existingValidationMsg.remove(); // deleting <p> element with validation 
+              }
+          }
+
         const data = await response.json(); // Data parsing
 
         avatar.src = data.avatar_url; // update a user`s avatar 
@@ -87,16 +111,21 @@ button.addEventListener('click', () => {
             twitterStatus.style.opacity = '0.3'
         ;
         }
-
-        if(data.company != null) { // НАПОМИНАШКА: вытащи юрл компании просто убрав @ и подставив под юрл гитхаба задача остается та же, отобразить прпвильную ссылку
+        
+        if(data.company != null) { 
             
+            // НАПОМИНАШКА: вытащи юрл компании просто убрав @ и подставив под юрл гитхаба задача остается та же, отобразить прпвильную ссылку
             
-            
-            companyStatus.innerText = data.company
-            
-            companyStatus.style.opacity = '1'
+            const companyName = data.company;
+            const companyLink = companyName.replace('@', '');
+            linkCompany.href = `https://github.com/${companyLink}`;
+            // linkCompany.setAttribute('disabled', 'disabled');
+            // linkCompany.removeAttribute('href');
+            companyStatus.innerText = data.company;
+            companyStatus.style.opacity = '1';
         } else {
-            
+            linkCompany.removeAttribute('href')
+            linkCompany.setAttribute('disabled', 'disabled')
             companyStatus.innerText = 'Not found'
             companyStatus.style.opacity = '0.3'
         }
@@ -105,18 +134,19 @@ button.addEventListener('click', () => {
         return data; 
     }
     catch (error) {
-        throw new Error(error.message);
+        console.error(error);
     }
 }
     (async () => {
     try {
         const data = await sendRequest('GET', usersListUrl);
-        console.log(data); //List of users in console
+        console.log(data); //List of user`s properties in console
     } catch (error) {
         console.error(error);
     }
     })();
 })
+
 
 
 
