@@ -112,15 +112,12 @@ button.addEventListener('click', (event) => {
         ;
         }
         
-        if(data.company != null) { 
-            
-            // НАПОМИНАШКА: вытащи юрл компании просто убрав @ и подставив под юрл гитхаба задача остается та же, отобразить прпвильную ссылку
+        if(data.company != null) {           
             
             const companyName = data.company;
             const companyLink = companyName.replace('@', '');
             linkCompany.href = `https://github.com/${companyLink}`;
-            // linkCompany.setAttribute('disabled', 'disabled');
-            // linkCompany.removeAttribute('href');
+            
             companyStatus.innerText = data.company;
             companyStatus.style.opacity = '1';
         } else {
