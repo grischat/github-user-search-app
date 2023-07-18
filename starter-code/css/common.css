@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 :root {
-  --grey-background-main: #F6F8FF;
+  --grey-background-main: #f6f8ff;
   --blue-button: #0079ff;
-  --blue-button-hover: #60ABFF;
+  --blue-button-hover: #60abff;
   --grey-text-data: #697c9a;
   --dark-grey-icons: #4b6a9b;
   --black-text: #2b3442;

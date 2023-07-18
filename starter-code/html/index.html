@@ -1,89 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Search GitHub user and receive short information">
-    <meta name="keywords" content="github search">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-    <link rel="stylesheet" href="/starter-code/css/common.css">
-    <link rel="stylesheet" href="/starter-code/css/mobile.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search GitHub user and receive short information"
+    />
+    <meta name="keywords" content="github search" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/starter-code/css/common.css" />
+    <link rel="stylesheet" href="/starter-code/css/mobile.css" />
     <title>GitHub search</title>
-</head>
-<body>
-
-<div class="nav__container">
-    <div class="header__container">
+  </head>
+  <body>
+    <div class="nav__container">
+      <div class="header__container">
         <div class="header__one">
-            <h1>devfinder</h1>
+          <h1>devfinder</h1>
         </div>
         <div class="themeswitcher__container">
-            <button class="themeswitcher__button"></button>
+          <button class="themeswitcher__button"></button>
         </div>
+      </div>
+      <div class="search__container">
+        <img
+          class="search__icon"
+          src="/starter-code/assets/icon-search.svg"
+          alt="search loop icon"
+        />
+        <input
+          type="text"
+          class="search__input"
+          id="input"
+          placeholder="Search GitHub username..."
+          name="emailInput"
+        />
+        <button
+          type="submit"
+          class="search__button"
+          id="button"
+          value="Search"
+          action="/submit-form"
+        >
+          Search
+        </button>
+      </div>
     </div>
-    <div class="search__container">
-        <img class="search__icon" src = "/starter-code/assets/icon-search.svg" alt="search loop icon">
-        <input type="text" class="search__input" id="input" placeholder="Search GitHub username..." name="emailInput">
-        <button type="submit" class="search__button" id="button" value="Search" action="/submit-form">Search</button>
-    </div>
-</div>
     <div class="content__container">
-        <div class="headinginfo__container">
-            <img src="/starter-code/assets/freak.png" alt="user`s avatar" id="user__avatar">
-            <div class="maininfo__container">
-                <h2 id="user__name">The Octocat</h2>
-                <a id="user__link" href="https://twitter.com/" target="_blank">@octocat</a>
-                <h3 id ="user__joined">Joined 25 Jan 2011</h3>
-            </div>
+      <div class="headinginfo__container">
+        <img
+          src="/starter-code/assets/freak.png"
+          alt="user`s avatar"
+          id="user__avatar"
+        />
+        <div class="maininfo__container">
+          <h2 id="user__name">The Octocat</h2>
+          <a id="user__link" href="https://twitter.com/" target="_blank"
+            >@octocat</a
+          >
+          <h3 id="user__joined">Joined 25 Jan 2011</h3>
         </div>
-        
-        <p id="user__bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec odio. Quisque volupat mattis eros.</p>
-        
-        <div class="secondaryinfo__container">
-            <div class="data__container">
-                <div class="repos__container">
-                    <h5 class="info__title">Repos</h5>
-                    <h4 class="info__count" id="repos">8</h4>
-                </div>
-                <div class="followers__container">
-                    <h5 class="info__title">Followers</h5>
-                    <h4 class="info__count" id="followers">3938</h4>
-                </div>
-                <div class="following__container">
-                    <h5 class="info__title">Following</h5>
-                    <h4 class="info__count" id="following">9</h4>
-                </div>
-            </div>
-        </div>
-        <div class="links__container">
-            <div class="location__container">
-                <a href="https://www.google.com/maps" target="_blank">
-                    <img class="icon" src="/starter-code/assets/icon-location.svg" alt="Location Icon">
-                    <span id="location" class="location__span">Not found</span>
-                </a>
-            </div>
-            <div class="userlink__container">
-                <a id="link__repos" href="https://example.com/social-media" target="_blank">
-                    <img class="icon" src="/starter-code/assets/icon-website.svg" alt="User`s link">
-                    <span>Repositories</span>
-                </a>
-            </div>
-            <div class="twitter__link">
-                <a id="link__twitter" href="https://twitter.com/" target="_blank">
-                    <img class="icon"  src="/starter-code/assets/icon-twitter.svg" alt="Twitter Icon">
-                    <span id="twitter__status">Twitter</span>
-                </a>
-            </div>
-            <div class="company__link">
-                <a id="company" href="https://github.com" target="_blank">
-                    <img class="icon" src="/starter-code/assets/icon-company.svg" alt="Company icon">
-                    <span id="company__name">Not found</span>
-                </a>
-            </div>           
-        </div>
-    </div>
-    
-<script src="/starter-code/js/getUser.js"></script>       
-</body>
+      </div>
 
+      <p id="user__bio">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec odio.
+        Quisque volupat mattis eros.
+      </p>
+
+      <div class="secondaryinfo__container">
+        <div class="data__container">
+          <div class="repos__container">
+            <h5 class="info__title">Repos</h5>
+            <h4 class="info__count" id="repos">8</h4>
+          </div>
+          <div class="followers__container">
+            <h5 class="info__title">Followers</h5>
+            <h4 class="info__count" id="followers">3938</h4>
+          </div>
+          <div class="following__container">
+            <h5 class="info__title">Following</h5>
+            <h4 class="info__count" id="following">9</h4>
+          </div>
+        </div>
+      </div>
+      <div class="links__container">
+        <div class="location__container">
+          <a href="https://www.google.com/maps" target="_blank">
+            <img
+              class="icon"
+              src="/starter-code/assets/icon-location.svg"
+              alt="Location Icon"
+            />
+            <span id="location" class="location__span">Not found</span>
+          </a>
+        </div>
+        <div class="userlink__container">
+          <a
+            id="link__repos"
+            href="https://example.com/social-media"
+            target="_blank"
+          >
+            <img
+              class="icon"
+              src="/starter-code/assets/icon-website.svg"
+              alt="User`s link"
+            />
+            <span>Repositories</span>
+          </a>
+        </div>
+        <div class="twitter__link">
+          <a id="link__twitter" href="https://twitter.com/" target="_blank">
+            <img
+              class="icon"
+              src="/starter-code/assets/icon-twitter.svg"
+              alt="Twitter Icon"
+            />
+            <span id="twitter__status">Twitter</span>
+          </a>
+        </div>
+        <div class="company__link">
+          <a id="company" href="https://github.com" target="_blank">
+            <img
+              class="icon"
+              src="/starter-code/assets/icon-company.svg"
+              alt="Company icon"
+            />
+            <span id="company__name">Not found</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="/starter-code/js/getUser.js"></script>
+  </body>
 </html>
