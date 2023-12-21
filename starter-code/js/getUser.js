@@ -26,7 +26,7 @@ button.addEventListener("click", (event) => {
   async function sendRequest(method, url) {
     try {
       const response = await fetch(url);
-
+      console.log(response)
       if (response.status === 404) {
         // User not found
 
@@ -121,7 +121,7 @@ button.addEventListener("click", (event) => {
         twitterStatus.innerText = "Not found";
         twitterStatus.style.opacity = "0.3";
       }
-
+      
       if (data.company != null) {
         const companyName = data.company;
         const companyLink = companyName.replace("@", "");
